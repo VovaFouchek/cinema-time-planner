@@ -1,0 +1,27 @@
+// Global style file
+@import './styles/reset';
+
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  // background: #272b33;
+}
+
+.inner {
+  width: 100%;
+  max-width: 1230px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.App {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+}
