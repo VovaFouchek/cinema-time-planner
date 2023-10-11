@@ -1,8 +1,10 @@
 import Home from './page/Home';
 
+import styles from './app.module.scss';
+
 const App = () => {
   return (
-    <div>
+    <div className={styles.inner}>
       <Home />
     </div>
   );

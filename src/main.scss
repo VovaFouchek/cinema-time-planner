@@ -2,26 +2,17 @@
 @import './styles/reset';
 
 // Fonts
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 body {
-  font-family: 'Roboto', sans-serif;
-  // background: #272b33;
-}
-
-.inner {
-  width: 100%;
-  max-width: 1230px;
-  margin: 0 auto;
-  padding: 0 10px;
-}
-
-.App {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  min-height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(
+    165.26deg,
+    rgba(132, 225, 255, 0.86) -0.37%,
+    rgba(158, 180, 255, 0.86) 24.39%,
+    rgba(226, 188, 255, 0.86) 42.19%,
+    rgba(255, 255, 255, 0.23) 74.37%
+  );
+  background-size: cover;
+  background-repeat: no-repeat;
 }
