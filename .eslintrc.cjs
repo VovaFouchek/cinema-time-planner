@@ -21,8 +21,14 @@ module.exports = {
   },
   plugins: ['react-refresh', 'prettier'],
   rules: {
-    'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
-    'react/function-component-definition': [2, { namedComponents: 'arrow-function' }],
+    'react-refresh/only-export-components': [
+      'warn',
+      { allowConstantExport: true },
+    ],
+    'react/function-component-definition': [
+      2,
+      { namedComponents: 'arrow-function' },
+    ],
     '@typescript-eslint/no-unused-vars': 'warn',
     '@typescript-eslint/no-non-null-assertion': 'off',
     'react/prop-types': 'off',
