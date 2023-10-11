@@ -1,11 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 
 // Stores
-import moviesScheduleSlice from './movies/reducer';
+import scheduleSlice from './schedule/reducer';
 
 const store = configureStore({
   reducer: {
-    moviesSchedule: moviesScheduleSlice,
+    schedule: scheduleSlice,
   },
 });
 

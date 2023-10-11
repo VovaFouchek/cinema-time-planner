@@ -1,2 +1,2 @@
-// eslint-disable-next-line import/prefer-default-export
 export const MOVIES_SCHEDULE_GET = 'moviesSchedule/GET';
+export const MEETINGS_SCHEDULE_GET = 'meetingsSchedule/GET';

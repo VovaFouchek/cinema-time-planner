@@ -8,3 +8,10 @@ export interface IMoviesSchedule {
   movie: string;
   sessions: ISession[];
 }
+
+export interface IMeetingsSchedule {
+  id: number;
+  date: string;
+  time: string;
+  task: string;
+}

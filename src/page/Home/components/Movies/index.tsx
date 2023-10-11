@@ -1,5 +1,5 @@
-import { useAppSelector } from '@redux/movies/hook';
-import { selectorMoviesSchedule } from '@redux/movies/selector';
+import { useAppSelector } from '@redux/hook';
+import { selectorSchedule } from '@redux/schedule/selector';
 
 import Card from '@components/Card';
 import Loader from '@components/Loader';
@@ -7,7 +7,7 @@ import Loader from '@components/Loader';
 // import styles from './movies.module.scss';
 
 const Movies = () => {
-  const { moviesSchedule, isLoading } = useAppSelector(selectorMoviesSchedule);
+  const { moviesSchedule, isLoading } = useAppSelector(selectorSchedule);
 
   return (
     <Card>

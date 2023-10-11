@@ -1,9 +1,12 @@
 /* eslint-disable @typescript-eslint/no-floating-promises */
 import { useEffect } from 'react';
 
-import { useAppDispatch, useAppSelector } from '@redux/movies/hook';
-import { getMoviesSchedule } from '@redux/movies/actions';
-import { selectorMoviesSchedule } from '@redux/movies/selector';
+import { useAppDispatch, useAppSelector } from '@redux/hook';
+import { selectorSchedule } from '@redux/schedule/selector';
+import {
+  getMeetingsSchedule,
+  getMoviesSchedule,
+} from '@redux/schedule/actions';
 
 import ErrorMessage from '@components/ErrorMessage';
 import Meetings from './components/Meetings';
@@ -14,10 +17,11 @@ import styles from './home.module.scss';
 const Home = () => {
   const dispatch = useAppDispatch();
 
-  const { isLoading, error } = useAppSelector(selectorMoviesSchedule);
+  const { isLoading, error } = useAppSelector(selectorSchedule);
 
   useEffect(() => {
     dispatch(getMoviesSchedule());
+    dispatch(getMeetingsSchedule());
   }, [dispatch]);
 
   return (
