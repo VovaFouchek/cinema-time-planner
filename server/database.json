@@ -1,6 +1,7 @@
 {
   "moviesSchedule": [
     {
+      "id": 43534535,
       "movie": "Фільм 1",
       "sessions": [
         {
@@ -18,6 +19,7 @@
       ]
     },
     {
+      "id": 4980385,
       "movie": "Фільм 2",
       "sessions": [
         {
@@ -35,7 +37,7 @@
       ]
     }
   ],
-  "meetingSchedule": [
+  "meetingsSchedule": [
     {
       "date": "2023-10-11",
       "time": "14: 00",
