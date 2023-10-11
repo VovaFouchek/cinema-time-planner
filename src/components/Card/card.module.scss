@@ -1,0 +1,11 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  min-height: 450px;
+  padding: 30px 25px 35px;
+  border-radius: 25px;
+  background-color: #fff;
+  box-shadow: 0 24px 45px 2px rgba(80, 107, 156, 0.08);
+}
