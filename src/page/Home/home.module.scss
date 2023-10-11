@@ -2,7 +2,7 @@
   position: relative;
   width: 100%;
   max-width: 1230px;
-  min-height: 800px;
+  min-height: 700px;
   margin: 0 auto;
   padding: 30px;
   border-radius: 10px;
@@ -20,6 +20,6 @@ h1 {
 .wrap {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   gap: 30px;
 }

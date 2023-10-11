@@ -1,0 +1,21 @@
+.picture {
+  max-width: 200px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  object-fit: contain;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+
+  &__title {
+    margin-bottom: 10px;
+  }
+}
+
+span {
+  margin-bottom: 10px;
+}

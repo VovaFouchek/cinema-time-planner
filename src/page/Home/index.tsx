@@ -11,6 +11,7 @@ import {
 import ErrorMessage from '@components/ErrorMessage';
 import Meetings from './components/Meetings';
 import Movies from './components/Movies';
+import RecommendedTime from './components/RecommendedTime';
 
 import styles from './home.module.scss';
 
@@ -31,6 +32,7 @@ const Home = () => {
       <div className={styles.wrap}>
         <Meetings />
         <Movies />
+        <RecommendedTime />
       </div>
 
       {!isLoading && error ? <ErrorMessage message={error} /> : null}

@@ -1,8 +1,8 @@
 import { IMeetingsSchedule, IMoviesSchedule } from '../../../shared/interfaces';
 
 export interface IScheduleReducer {
-  moviesSchedule: IMoviesSchedule[] | null;
-  meetingsSchedule: IMeetingsSchedule[] | null;
+  moviesSchedule: IMoviesSchedule[];
+  meetingsSchedule: IMeetingsSchedule[];
   isLoading: boolean;
   error?: string | null;
 }
