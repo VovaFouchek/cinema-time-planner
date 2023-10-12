@@ -1,37 +1,64 @@
+/* eslint-disable no-restricted-syntax */
 /* eslint-disable @typescript-eslint/no-unnecessary-condition */
 import { useAppSelector } from '@redux/hook';
 import { selectorSchedule } from '@redux/schedule/selector';
 
 import Card from '@components/Card';
+import DateTimeDisplay from '@components/DateTimeDisplay';
+
+import styles from './recommendedTime.module.scss';
 
 const RecommendedTime = () => {
   const { moviesSchedule, meetingsSchedule } = useAppSelector(selectorSchedule);
 
-  const calculateRecommendedTime = () => {
-    const sortedMeetings = [...meetingsSchedule].sort(
-      (a, b) => +new Date(a.date) - +new Date(b.date)
-    );
+  const currentTime = new Date();
+  let closestMovie = '';
+  let closestTime = '';
 
-    const firstMeeting = sortedMeetings[0];
-    const nearestMovie = [...moviesSchedule].find((movie) => {
-      if (firstMeeting?.date) {
-        return new Date(movie.sessions[0]?.date) > new Date(firstMeeting.date);
+  const sortedMeetings = [...meetingsSchedule].sort(
+    (a, b) => +new Date(a.date) - +new Date(b.date)
+  );
+
+  for (const movie of moviesSchedule) {
+    for (const session of movie.sessions) {
+      if (session?.date) {
+        const sessionTime = new Date(session.date);
+
+        if (sessionTime > currentTime) {
+          const movieStartTime = new Date(
+            sessionTime.getTime() - 1 * 60 * 60 * 1000
+          );
+          const movieEndTime = new Date(
+            sessionTime.getTime() + 2 * 60 * 60 * 1000
+          );
+
+          const conflictingMeeting = sortedMeetings.find((meeting) => {
+            const meetingTime = new Date(meeting.date);
+
+            return meetingTime >= movieStartTime && meetingTime <= movieEndTime;
+          });
+
+          if (!conflictingMeeting) {
+            closestMovie = movie.movie;
+            closestTime = session.date;
+            break;
+          }
+        }
       }
-      return -1;
-    });
-
-    if (!nearestMovie) {
-      return 'На жаль, не знайдено підходящого часу для відвідування кінотеатру.';
     }
-
-    return `Фільм: ${nearestMovie.movie}, Дата та час: "${nearestMovie.sessions[0].date}".`;
-  };
-
-  const recommendedTime = calculateRecommendedTime();
+  }
 
   return (
-    <Card title="The most convinient time for cinema:">
-      <p>{recommendedTime}</p>
+    <Card title="The most convenient time for cinema:">
+      {closestMovie ? (
+        <div className={styles.wrap}>
+          Movie: <strong>{closestMovie}</strong>
+          <DateTimeDisplay date={closestTime} />
+          <p className={styles.description}>Have a great time!</p>
+        </div>
+      ) : (
+        <p>Unfortunately, no suitable time was found to visit the cinema</p>
+      )}
     </Card>
   );
 };

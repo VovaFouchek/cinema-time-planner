@@ -1,6 +1,5 @@
 interface ISession {
   date: string;
-  time: string;
 }
 
 export interface IMoviesSchedule {
@@ -13,6 +12,5 @@ export interface IMoviesSchedule {
 export interface IMeetingsSchedule {
   id: number;
   date: string;
-  time: string;
   task: string;
 }

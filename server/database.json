@@ -6,16 +6,13 @@
       "picture": "https://www.omnycontent.com/d/clips/5862e877-aee5-40db-a58d-ae2800ddc8a3/3682a3cf-fa3e-42d2-adb1-ae69009a8630/11d3bf75-4850-4511-bfad-b04300def705/image.jpg?t=1689687219&in_playlist=e1953503-323d-47b9-a3e7-ae6900cc8e33&size=small",
       "sessions": [
         {
-          "date": "2023-10-12 11: 00",
-          "time": "11: 00"
+          "date": "2023-10-12 11:00"
         },
         {
-          "date": "2023-10-13 15: 00",
-          "time": "15: 00"
+          "date": "2023-10-13 15:00"
         },
         {
-          "date": "2023-10-14 19: 00",
-          "time": "19: 00"
+          "date": "2023-10-14 23:00"
         }
       ]
     },
@@ -25,16 +22,13 @@
       "picture": "https://is2-ssl.mzstatic.com/image/thumb/Music114/v4/9f/7e/60/9f7e6017-3bd3-570f-7890-eba0f3aa6c33/mzi.hxbvposl.jpg/256x256bb.jpg",
       "sessions": [
         {
-          "date": "2023-10-12 14: 00",
-          "time": "10: 00"
+          "date": "2023-10-12 17:00"
         },
         {
-          "date": "2023-10-13 14: 00",
-          "time": "14: 00"
+          "date": "2023-10-13 16:00"
         },
         {
-          "date": "2023-10-14 20: 00",
-          "time": "20: 00"
+          "date": "2023-10-14 19:00"
         }
       ]
     }
@@ -43,19 +37,26 @@
     {
       "id": 24234234,
       "date": "2023-10-12 18:00",
-      "time": "18:00",
       "task": "Working"
     },
     {
       "id": 4008545,
       "date": "2023-10-12 16:30",
-      "time": "16:30",
       "task": "Studing"
     },
     {
       "id": 77774324,
-      "date": "2023-10-12 11:00",
-      "time": "11:00",
+      "date": "2023-10-12 22:00",
+      "task": "Meeting"
+    },
+    {
+      "id": 53346645,
+      "date": "2023-10-13 14:00",
+      "task": "Meeting"
+    },
+    {
+      "id": 346456,
+      "date": "2023-10-14 19:00",
       "task": "Meeting"
     }
   ]
