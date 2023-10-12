@@ -41,5 +41,4 @@ const scheduleSlice = createSlice({
   },
 });
 
-// export const {  } = scheduleSlice.actions;
 export default scheduleSlice.reducer;

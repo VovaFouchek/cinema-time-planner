@@ -12,12 +12,17 @@ const Meetings = () => {
 
   return (
     <Card title="Meetings">
-      {meetingsSchedule.map((meeting) => (
-        <div className={styles.item} key={meeting.id}>
-          <strong>{meeting.task}</strong> on{' '}
-          <DateTimeDisplay date={meeting.date} />
-        </div>
-      ))}
+      {meetingsSchedule.length ? (
+        meetingsSchedule.map((meeting) => (
+          <div className={styles.item} key={meeting.id}>
+            <strong>{meeting.task}</strong> on{' '}
+            <DateTimeDisplay date={meeting.date} />
+          </div>
+        ))
+      ) : (
+        <p>There are no meetings in the near future</p>
+      )}
+
       {isLoading && <Loader />}
     </Card>
   );
