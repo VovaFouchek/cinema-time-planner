@@ -3,6 +3,11 @@
   margin-bottom: 20px;
   border-radius: 15px;
   object-fit: contain;
+  transition: 0.5s transform;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 
 .item {

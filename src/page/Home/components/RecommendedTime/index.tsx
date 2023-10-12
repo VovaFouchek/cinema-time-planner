@@ -67,9 +67,8 @@ const RecommendedTime = () => {
           Movie: <strong>{closestMovie}</strong>
           <DateTimeDisplay date={closestTime} />
           <p className={styles.description}>
-            The best idea to go to cinema, when you done 1 meeting. You will
-            spend almost 2 hours on a movie and 1 hours to commute. Have a great
-            time!
+            You will spend almost 2 hours on a movie and 1 hours to commute.
+            Have a great time!
           </p>
         </div>
       ) : (
