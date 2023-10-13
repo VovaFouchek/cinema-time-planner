@@ -1,4 +1,4 @@
-import { IMeetingsSchedule, IMoviesSchedule } from '../../../shared/interfaces';
+import { IMeetingsSchedule, IMoviesSchedule } from '@shared/interfaces';
 
 export interface IScheduleReducer {
   moviesSchedule: IMoviesSchedule[];

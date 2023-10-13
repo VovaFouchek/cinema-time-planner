@@ -1,10 +1,11 @@
 import axios from 'axios';
 
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { MEETINGS_SCHEDULE_GET, MOVIES_SCHEDULE_GET } from '../action-types';
 
-import { IMeetingsSchedule, IMoviesSchedule } from '../../shared/interfaces';
-import { API } from '@/shared/API/entity.api';
+import { API } from '@shared/API/entity.api';
+import { IMeetingsSchedule, IMoviesSchedule } from '@shared/interfaces';
+
+import { MEETINGS_SCHEDULE_GET, MOVIES_SCHEDULE_GET } from '../action-types';
 
 export const getMoviesSchedule = createAsyncThunk(
   MOVIES_SCHEDULE_GET,

@@ -5,7 +5,7 @@ interface ISession {
 export interface IMoviesSchedule {
   id: number;
   movie: string;
-  picture?: string;
+  imageUrl?: string;
   sessions: ISession[];
 }
 

@@ -3,23 +3,23 @@
     {
       "id": 43534535,
       "movie": "Oppenheimer",
-      "picture": "https://upload.wikimedia.org/wikipedia/en/4/4a/Oppenheimer_%28film%29.jpg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/4/4a/Oppenheimer_%28film%29.jpg",
       "sessions": [
         {
           "date": "2023-10-13 11:00"
         },
         {
-          "date": "2023-10-14 15:00"
+          "date": "2023-10-16 15:00"
         },
         {
-          "date": "2023-10-14 23:00"
+          "date": "2023-10-17 23:00"
         }
       ]
     },
     {
       "id": 4980385,
       "movie": "Inception",
-      "picture": "https://upload.wikimedia.org/wikipedia/en/2/2e/Inception_%282010%29_theatrical_poster.jpg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/2/2e/Inception_%282010%29_theatrical_poster.jpg",
       "sessions": [
         {
           "date": "2023-10-13 18:00"
@@ -34,14 +34,14 @@
           "date": "2023-10-15 17:30"
         },
         {
-          "date": "2023-10-16 19:00"
+          "date": "2023-10-17 19:00"
         }
       ]
     },
     {
       "id": 995436344,
       "movie": "Top Gun: Maverick",
-      "picture": "https://upload.wikimedia.org/wikipedia/uk/9/98/Poster_Top_Gun_Maveric_Uk.jpg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/uk/9/98/Poster_Top_Gun_Maveric_Uk.jpg",
       "sessions": [
         {
           "date": "2023-10-15 12:00"
@@ -57,7 +57,7 @@
     {
       "id": 5646346534,
       "movie": "The Maze Runner",
-      "picture": "https://upload.wikimedia.org/wikipedia/en/b/be/The_Maze_Runner_poster.jpg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/b/be/The_Maze_Runner_poster.jpg",
       "sessions": [
         {
           "date": "2023-10-16 13:00"
@@ -73,7 +73,7 @@
     {
       "id": 11446436564,
       "movie": "Interstellar",
-      "picture": "https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg",
       "sessions": [
         {
           "date": "2023-10-16 12:00"
@@ -105,7 +105,7 @@
     },
     {
       "id": 53346645,
-      "date": "2023-10-14 14:00",
+      "date": "2023-10-15 14:00",
       "task": "Meeting"
     },
     {

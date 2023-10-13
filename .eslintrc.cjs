@@ -20,6 +20,7 @@ module.exports = {
     tsconfigRootDir: __dirname,
   },
   plugins: ['react-refresh', 'prettier'],
+  ignorePatterns: ['.eslintrc.cjs', 'vite.config.ts'],
   rules: {
     'react-refresh/only-export-components': [
       'warn',

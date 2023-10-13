@@ -15,7 +15,7 @@ const Movies = () => {
       {moviesSchedule.map((movie) => (
         <div key={movie.id} className={styles.item}>
           <img
-            src={movie.picture}
+            src={movie.imageUrl}
             className={styles.picture}
             alt={movie.movie}
           />

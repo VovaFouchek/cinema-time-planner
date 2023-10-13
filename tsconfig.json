@@ -24,8 +24,9 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
-      "@components/*": ["src/components/*"],
       "@assets/*": ["src/assets/*"],
+      "@components/*": ["src/components/*"],
+      "@shared/*": ["src/shared/*"],
       "@redux/*": ["src/redux/*"]
     }
   },
