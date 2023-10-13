@@ -17,3 +17,7 @@ Movie Time Planner is a React app built with TypeScript and Redux-Toolkit that h
 - Axios
 - React Select
 - Vite
+
+## Testing
+
+If you want to change the input data locally, you need to change the baseURL in the axios.ts file (just uncomment). The local server starts automatically when the project starts
