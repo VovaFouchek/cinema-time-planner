@@ -25,4 +25,5 @@ export default defineConfig({
       },
     }),
   ],
+  base: '/cinema-time-planner/',
 });
