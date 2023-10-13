@@ -1,5 +1,5 @@
 /* eslint-disable no-restricted-syntax */
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { useAppSelector } from '@redux/hook';
 import { selectorSchedule } from '@redux/schedule/selector';
@@ -10,50 +10,58 @@ import MoviesSelect, { Option } from '../MoviesSelect';
 
 import styles from './recommendedTime.module.scss';
 
+interface IClosestValue {
+  movie: string;
+  time: string;
+}
+
 const RecommendedTime = () => {
   const { moviesSchedule, meetingsSchedule } = useAppSelector(selectorSchedule);
 
   const [selectedOption, setSelectedOption] = useState<Option | null>();
+  const [closestValue, setClosestValue] = useState<IClosestValue | null>(null);
 
-  let closestMovie = '';
-  let closestTime = '';
+  useEffect(() => {
+    const sortedMeetings = [...meetingsSchedule].sort(
+      (meetingA, meetingB) =>
+        +new Date(meetingA.date) - +new Date(meetingB.date)
+    );
 
-  const sortedMeetings = [...meetingsSchedule].sort(
-    (meetingA, meetingB) => +new Date(meetingA.date) - +new Date(meetingB.date)
-  );
+    const selectedMovie = moviesSchedule.find(
+      (movie) => movie.movie === selectedOption?.value
+    );
 
-  const selectedMovie = moviesSchedule.find(
-    (movie) => movie.movie === selectedOption?.value
-  );
+    if (selectedMovie?.id) {
+      const currentTime = new Date().getTime();
 
-  if (selectedMovie?.id) {
-    const currentTime = new Date();
+      for (const session of selectedMovie.sessions) {
+        const sessionTime = new Date(session.date).getTime();
+        const hourInMilliseconds = 60 * 60 * 1000;
 
-    for (const session of selectedMovie.sessions) {
-      const sessionTime = new Date(session.date);
+        if (sessionTime > currentTime) {
+          const movieStartTime = new Date(
+            sessionTime - 0.5 * hourInMilliseconds
+          );
+          const movieEndTime = new Date(sessionTime + 2.5 * hourInMilliseconds);
 
-      if (sessionTime > currentTime) {
-        const movieStartTime = new Date(
-          sessionTime.getTime() - 1 * 60 * 60 * 1000
-        );
-        const movieEndTime = new Date(
-          sessionTime.getTime() + 2 * 60 * 60 * 1000
-        );
+          const conflictingMeeting = sortedMeetings.find((meeting) => {
+            const meetingTime = new Date(meeting.date);
 
-        const conflictingMeeting = sortedMeetings.find((meeting) => {
-          const meetingTime = new Date(meeting.date);
+            return meetingTime >= movieStartTime && meetingTime <= movieEndTime;
+          });
 
-          return meetingTime >= movieStartTime && meetingTime <= movieEndTime;
-        });
-
-        if (!conflictingMeeting) {
-          closestMovie = selectedMovie.movie;
-          closestTime = session.date;
-          break;
+          if (!conflictingMeeting) {
+            setClosestValue({
+              movie: selectedMovie.movie,
+              time: session.date,
+            });
+            break;
+          }
         }
       }
     }
-  }
+  }, [meetingsSchedule, moviesSchedule, selectedOption?.value]);
+
   return (
     <Card title="The most convenient time for cinema:">
       <MoviesSelect
@@ -62,10 +70,10 @@ const RecommendedTime = () => {
           setSelectedOption(value);
         }}
       />
-      {closestMovie ? (
+      {closestValue?.movie ? (
         <div className={styles.wrap}>
-          Movie: <strong>{closestMovie}</strong>
-          <DateTimeDisplay date={closestTime} />
+          Movie: <strong>{closestValue.movie}</strong>
+          <DateTimeDisplay date={closestValue.time} />
           <p className={styles.description}>
             You will spend almost 2 hours on a movie and 1 hours to commute.
             Have a great time!
