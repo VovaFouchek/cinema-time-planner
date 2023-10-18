@@ -6,7 +6,7 @@
       "imageUrl": "https://upload.wikimedia.org/wikipedia/en/4/4a/Oppenheimer_%28film%29.jpg",
       "description": "Based on the 2005 biography American Prometheus by Kai Bird and Martin J. Sherwin, the film chronicles the career of Oppenheimer, with the story predominantly focusing on his studies, his direction of the Manhattan Project during World War II, and his eventual fall from grace due to his 1954 security hearing.",
       "production": "USA",
-      "release_date": "2023-10-13",
+      "release_date": "2023-07-11",
       "genre": [
         "Biography",
         "Drama",
@@ -23,13 +23,13 @@
       ],
       "sessions": [
         {
-          "date": "2023-10-13 11:00"
+          "date": "2023-10-24 11:00"
         },
         {
-          "date": "2023-10-16 15:00"
+          "date": "2023-10-25 15:00"
         },
         {
-          "date": "2023-10-17 23:00"
+          "date": "2023-10-26 23:00"
         }
       ]
     },
@@ -37,10 +37,24 @@
       "id": 4980385,
       "movie": "Inception",
       "imageUrl": "https://upload.wikimedia.org/wikipedia/en/2/2e/Inception_%282010%29_theatrical_poster.jpg",
+      "description": "A thief who invades targets' dreams through a chemical-induced shared dream state in order to steal valuable information",
+      "production": "USA",
+      "release_date": "2023-07-08",
       "genre": [
         "Action",
         "Adventure",
         "Sci-Fi"
+      ],
+      "running_time": 148,
+      "age_restriction": "14+",
+      "director": "Christopher Nolan",
+      "starring": [
+        "Leonardo DiCaprio",
+        "Ken Watanabe",
+        "Joseph Gordon-Levitt",
+        "Marion Cotillard",
+        "Tom Hardy",
+        "Cillian Murphy"
       ],
       "sessions": [
         {
@@ -50,13 +64,13 @@
           "date": "2023-10-14 16:00"
         },
         {
-          "date": "2023-10-14 19:00"
+          "date": "2023-10-22 19:00"
         },
         {
-          "date": "2023-10-15 17:30"
+          "date": "2023-10-23 17:30"
         },
         {
-          "date": "2023-10-17 19:00"
+          "date": "2023-10-25 19:00"
         }
       ]
     },
@@ -64,15 +78,32 @@
       "id": 995436344,
       "movie": "Top Gun: Maverick",
       "imageUrl": "https://upload.wikimedia.org/wikipedia/uk/9/98/Poster_Top_Gun_Maveric_Uk.jpg",
+      "description": "Top Gun: Maverick is a 2022 American action drama film directed by Joseph Kosinski and written by Ehren Kruger, Eric Warren Singer, and Christopher McQuarrie from stories by Peter Craig and Justin Marks. The film is a sequel to the 1986 film Top Gun.",
+      "production": "USA",
+      "release_date": "2022-04-28",
+      "genre": [
+        "Action",
+        "Drama"
+      ],
+      "running_time": 130,
+      "age_restriction": "14+",
+      "director": "Joseph Kosinski",
+      "starring": [
+        "Tom Cruise",
+        "Miles Teller",
+        "Jennifer Connelly",
+        "Jon Hamm",
+        "Glen Powell"
+      ],
       "sessions": [
         {
           "date": "2023-10-15 12:00"
         },
         {
-          "date": "2023-10-16 14:00"
+          "date": "2023-10-24 14:00"
         },
         {
-          "date": "2023-10-17 20:00"
+          "date": "2023-10-25 20:00"
         }
       ]
     },
@@ -80,15 +111,31 @@
       "id": 5646346534,
       "movie": "The Maze Runner",
       "imageUrl": "https://upload.wikimedia.org/wikipedia/en/b/be/The_Maze_Runner_poster.jpg",
+      "description": "The story is set in a distant future, where a group of teens are mysteriously teleported into a giant, stone maze. Not only has their memory been cleared, but they also have no indication as to why they have ended up in this position and what means they must take to escape.",
+      "production": "USA",
+      "release_date": "2014-09-12",
+      "genre": [
+        "Action",
+        "Sci-Fi",
+        "Mystery"
+      ],
+      "running_time": 113,
+      "age_restriction": "15+",
+      "director": "Wes Ball",
+      "starring": [
+        "Dylan O'Brien",
+        "Kaya Scodelario",
+        "Thomas Brodie-Sangster"
+      ],
       "sessions": [
         {
           "date": "2023-10-16 13:00"
         },
         {
-          "date": "2023-10-17 16:00"
+          "date": "2023-10-25 16:00"
         },
         {
-          "date": "2023-10-18 18:00"
+          "date": "2023-10-25 18:00"
         }
       ]
     },
@@ -96,15 +143,32 @@
       "id": 11446436564,
       "movie": "Interstellar",
       "imageUrl": "https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg",
+      "description": "Set in a future where a failing Earth puts humanity on the brink of extinction, it sees an intrepid team of NASA scientists, engineers and pilots attempt to find a new habitable planet, via interstellar travel.",
+      "production": "USA",
+      "release_date": "2014-11-05",
+      "genre": [
+        "Adventure",
+        "Sci-Fi",
+        "Drama"
+      ],
+      "running_time": 169,
+      "age_restriction": "14+",
+      "director": "Christopher Nolan",
+      "starring": [
+        "Matthew McConaughey",
+        "Anne Hathaway",
+        "Jessica Chastain",
+        "Bill Irwin"
+      ],
       "sessions": [
         {
           "date": "2023-10-16 12:00"
         },
         {
-          "date": "2023-10-17 15:00"
+          "date": "2023-10-25 15:00"
         },
         {
-          "date": "2023-10-18 19:00"
+          "date": "2023-10-25 19:00"
         }
       ]
     }
