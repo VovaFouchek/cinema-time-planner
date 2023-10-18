@@ -8,7 +8,8 @@ type TGenre =
   | 'History'
   | 'Action'
   | 'Adventure'
-  | 'Sci-Fi';
+  | 'Sci-Fi'
+  | 'Mystery';
 
 export interface IMovieSchedule {
   id: number;

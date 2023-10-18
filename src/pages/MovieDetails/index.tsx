@@ -31,6 +31,8 @@ const MovieDetails = () => {
     dispatch(getMovieById(id!));
   }, [dispatch, id]);
 
+  const getReleaseYear = new Date(movieDetails.release_date).getFullYear();
+
   return (
     <div>
       <Button onClick={handleBackClick}>Back to Home</Button>
@@ -38,13 +40,52 @@ const MovieDetails = () => {
         <Loader />
       ) : (
         movieDetails.id && (
-          <div className={styles.wrap}>
-            <img src={movieDetails.imageUrl} alt={movieDetails.movie} />
-            {movieDetails.sessions.map((session) => (
-              <span key={session.date}>
-                <DateTimeDisplay date={session.date} />
-              </span>
-            ))}
+          <div className={styles.inner}>
+            <img
+              src={movieDetails.imageUrl}
+              className={styles.picture}
+              alt={movieDetails.movie}
+            />
+            <div className={styles.wrap__content}>
+              <h3 className={styles.title}>{movieDetails.movie}</h3>
+              <p className={styles.description}>{movieDetails.description}</p>
+              <ul>
+                <li>
+                  <strong>Production:</strong> {movieDetails.production}
+                </li>
+                <li>
+                  <strong>Genre:</strong> {movieDetails.genre.join(', ')}
+                </li>
+                <li>
+                  <strong>Release year:</strong> {getReleaseYear}
+                </li>
+                <li>
+                  <strong>Director:</strong> {movieDetails.director}
+                </li>
+                <li>
+                  <strong>Running time:</strong> {movieDetails.running_time}
+                  <span>min</span>
+                </li>
+                <li>
+                  <strong>Age restriction: </strong>
+                  {movieDetails.age_restriction}
+                </li>
+                <li>
+                  <strong>Starring:</strong> {movieDetails.starring.join(', ')}
+                </li>
+              </ul>
+              <div className={styles.wrap__session}>
+                {movieDetails.sessions.length ? (
+                  movieDetails.sessions.map((session) => (
+                    <div key={session.date} className={styles.session}>
+                      <DateTimeDisplay date={session.date} />
+                    </div>
+                  ))
+                ) : (
+                  <p>No available sessions</p>
+                )}
+              </div>
+            </div>
           </div>
         )
       )}
