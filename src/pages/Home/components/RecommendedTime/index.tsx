@@ -31,18 +31,27 @@ const RecommendedTime = () => {
       (movie) => movie.movie === selectedOption?.value
     );
 
+    const convertMinuteToHours = (minuteCount: number) => minuteCount / 60;
+
     if (selectedMovie?.id) {
       const currentTime = new Date().getTime();
 
       for (const session of selectedMovie.sessions) {
         const sessionTime = new Date(session.date).getTime();
+        const comuteTime = 0.5;
         const hourInMilliseconds = 60 * 60 * 1000;
+
+        const movieRunningTime = convertMinuteToHours(
+          +selectedMovie.running_time.toFixed(1)
+        );
 
         if (sessionTime > currentTime) {
           const movieStartTime = new Date(
-            sessionTime - 0.5 * hourInMilliseconds
+            sessionTime - comuteTime * hourInMilliseconds
           );
-          const movieEndTime = new Date(sessionTime + 2.5 * hourInMilliseconds);
+          const movieEndTime = new Date(
+            sessionTime + movieRunningTime * hourInMilliseconds
+          );
 
           const conflictingMeeting = sortedMeetings.find((meeting) => {
             const meetingTime = new Date(meeting.date);
