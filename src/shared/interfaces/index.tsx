@@ -2,10 +2,26 @@ interface ISession {
   date: string;
 }
 
-export interface IMoviesSchedule {
+type TGenre =
+  | 'Biography'
+  | 'Drama'
+  | 'History'
+  | 'Action'
+  | 'Adventure'
+  | 'Sci-Fi';
+
+export interface IMovieSchedule {
   id: number;
   movie: string;
-  imageUrl?: string;
+  imageUrl: string;
+  description: string;
+  production: string;
+  release_date: string;
+  genre: TGenre[];
+  running_time: number;
+  age_restriction: string;
+  director: string;
+  starring: string[];
   sessions: ISession[];
 }
 

@@ -1,9 +1,9 @@
 import axios, { AxiosInstance, AxiosResponse, AxiosError } from 'axios';
 
 export const axiosConfig = {
-  baseURL: 'https://my-json-server.typicode.com/VovaFouchek/server-test',
+  // baseURL: 'https://my-json-server.typicode.com/VovaFouchek/server-test',
   // ! if need Local Server, use below
-  // baseURL: 'http://localhost:3005',
+  baseURL: 'http://localhost:3005',
 };
 
 const instance: AxiosInstance = axios.create(axiosConfig);

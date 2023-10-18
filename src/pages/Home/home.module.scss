@@ -1,0 +1,12 @@
+h1 {
+  margin-bottom: 30px;
+  text-align: center;
+  color: #191825;
+}
+
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 30px;
+}

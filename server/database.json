@@ -4,6 +4,23 @@
       "id": 43534535,
       "movie": "Oppenheimer",
       "imageUrl": "https://upload.wikimedia.org/wikipedia/en/4/4a/Oppenheimer_%28film%29.jpg",
+      "description": "Based on the 2005 biography American Prometheus by Kai Bird and Martin J. Sherwin, the film chronicles the career of Oppenheimer, with the story predominantly focusing on his studies, his direction of the Manhattan Project during World War II, and his eventual fall from grace due to his 1954 security hearing.",
+      "production": "USA",
+      "release_date": "2023-10-13",
+      "genre": [
+        "Biography",
+        "Drama",
+        "History"
+      ],
+      "running_time": 180,
+      "age_restriction": "16+",
+      "director": "Christopher Nolan",
+      "starring": [
+        "Cillian Murphy",
+        "Emily Blunt",
+        "Matt Damon",
+        "Robert Downey Jr."
+      ],
       "sessions": [
         {
           "date": "2023-10-13 11:00"
@@ -20,6 +37,11 @@
       "id": 4980385,
       "movie": "Inception",
       "imageUrl": "https://upload.wikimedia.org/wikipedia/en/2/2e/Inception_%282010%29_theatrical_poster.jpg",
+      "genre": [
+        "Action",
+        "Adventure",
+        "Sci-Fi"
+      ],
       "sessions": [
         {
           "date": "2023-10-13 18:00"

@@ -1,0 +1,57 @@
+/* eslint-disable @typescript-eslint/no-floating-promises */
+import { useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+
+import { useAppDispatch, useAppSelector } from '@redux/hook';
+import { selectorSchedule } from '@redux/schedule/selector';
+import { getMovieById } from '@redux/schedule/actions';
+
+import DateTimeDisplay from '@components/DateTimeDisplay';
+import Button from '@components/Button';
+import Loader from '@components/Loader';
+import ErrorMessage from '@components/ErrorMessage';
+
+import ROUTERS from '@shared/constants/routers';
+
+import styles from './movieDetails.module.scss';
+
+const MovieDetails = () => {
+  const { movieDetails, isLoading, error } = useAppSelector(selectorSchedule);
+  const dispatch = useAppDispatch();
+
+  const navigate = useNavigate();
+  const params = useParams();
+  const { id } = params;
+
+  const handleBackClick = () => {
+    navigate(ROUTERS.BASE);
+  };
+
+  useEffect(() => {
+    dispatch(getMovieById(id!));
+  }, [dispatch, id]);
+
+  return (
+    <div>
+      <Button onClick={handleBackClick}>Back to Home</Button>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        movieDetails.id && (
+          <div className={styles.wrap}>
+            <img src={movieDetails.imageUrl} alt={movieDetails.movie} />
+            {movieDetails.sessions.map((session) => (
+              <span key={session.date}>
+                <DateTimeDisplay date={session.date} />
+              </span>
+            ))}
+          </div>
+        )
+      )}
+
+      {!isLoading && error ? <ErrorMessage message={error} /> : null}
+    </div>
+  );
+};
+
+export default MovieDetails;

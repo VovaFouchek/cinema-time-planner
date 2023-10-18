@@ -26,9 +26,8 @@ const Home = () => {
   }, [dispatch]);
 
   return (
-    <div className={styles.inner}>
+    <>
       <h1>Cinema time planner</h1>
-
       <div className={styles.wrap}>
         <Meetings />
         <Movies />
@@ -36,7 +35,7 @@ const Home = () => {
       </div>
 
       {!isLoading && error ? <ErrorMessage message={error} /> : null}
-    </div>
+    </>
   );
 };
 
