@@ -1,6 +1,5 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable @typescript-eslint/no-floating-promises */
-/* eslint-disable @typescript-eslint/no-misused-promises */
 import { ChangeEventHandler, useState } from 'react';
 import {
   useForm,
@@ -110,12 +109,14 @@ const CreateFormModal = () => {
           maxLengthValue={25}
           required
         />
+
         {errors.task && (
           <span className={styles.errorText}>Task name is required</span>
         )}
         {errors.task && errors.task.type === 'maxLength' && (
           <p className={styles.errorText}>Max length exceeded</p>
         )}
+
         <Controller
           control={control}
           rules={{
@@ -138,9 +139,11 @@ const CreateFormModal = () => {
             />
           )}
         />
+
         {errors.date && (
           <span className={styles.errorText}>Pick date is required</span>
         )}
+
         <p className={styles.text}>
           Pick a time:{' '}
           <input
@@ -151,6 +154,7 @@ const CreateFormModal = () => {
             disabled={isLoading}
           />
         </p>
+
         <p className={styles.text}>
           Selected date: {selected ? selected.toLocaleString() : 'none'}
         </p>

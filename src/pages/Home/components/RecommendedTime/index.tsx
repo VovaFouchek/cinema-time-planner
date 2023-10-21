@@ -6,7 +6,8 @@ import { selectorSchedule } from '@redux/schedule/selector';
 
 import Card from '@components/Card';
 import DateTimeDisplay from '@components/DateTimeDisplay';
-import formattedHours from '@shared/helpers/formattedHours';
+
+import formattedHours from '@helpers/formattedHours';
 import MoviesSelect, { Option } from '../MoviesSelect';
 
 import styles from './recommendedTime.module.scss';

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import toast from 'react-hot-toast';
 import moment from 'moment';
 
-import icsToJson, { IcsData } from '@shared/helpers/icsToJson';
+import icsToJson, { IcsData } from '@helpers/icsToJson';
 // import { useAppSelector } from '@redux/hook';
 // import { selectorSchedule } from '@redux/schedule/selector';
 

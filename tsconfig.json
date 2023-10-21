@@ -28,7 +28,8 @@
       "@components/*": ["src/components/*"],
       "@shared/*": ["src/shared/*"],
       "@redux/*": ["src/redux/*"],
-      "@hooks/*": ["src/hooks/*"]
+      "@hooks/*": ["src/hooks/*"],
+      "@helpers/*": ["src/helpers/*"]
     }
   },
   "include": ["src"],

@@ -31,6 +31,14 @@ module.exports = {
       { namedComponents: 'arrow-function' },
     ],
     '@typescript-eslint/no-unused-vars': 'warn',
+    '@typescript-eslint/no-misused-promises': [
+      2,
+      {
+        checksVoidReturn: {
+          attributes: false,
+        },
+      },
+    ],
     '@typescript-eslint/no-non-null-assertion': 'off',
     'react/prop-types': 'off',
     'no-param-reassign': [
