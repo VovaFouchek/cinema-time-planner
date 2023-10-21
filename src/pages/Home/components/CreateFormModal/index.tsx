@@ -9,6 +9,7 @@ import {
   FieldValues,
 } from 'react-hook-form';
 import { DayPicker } from 'react-day-picker';
+import toast from 'react-hot-toast';
 
 import { useAppDispatch } from '@redux/hook';
 import { addMeeting } from '@redux/schedule/actions';
@@ -51,11 +52,13 @@ const CreateFormModal = () => {
     const fullDate = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()} ${time}`;
 
     dispatch(addMeeting({ date: fullDate, task }));
+
     setTimeout(() => {
       setIsLoading(false);
       dispatch(setCloseCreatedFormModal());
+      toast.success('Successfully created!');
       reset();
-    }, 1000);
+    }, 1500);
   };
 
   const handleTimeChange: ChangeEventHandler<HTMLInputElement> = (e) => {
@@ -104,10 +107,14 @@ const CreateFormModal = () => {
           disabled={isLoading}
           register={register}
           errors={errors}
+          maxLengthValue={25}
           required
         />
         {errors.task && (
           <span className={styles.errorText}>Task name is required</span>
+        )}
+        {errors.task && errors.task.type === 'maxLength' && (
+          <p className={styles.errorText}>Max length exceeded</p>
         )}
         <Controller
           control={control}

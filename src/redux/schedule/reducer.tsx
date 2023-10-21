@@ -32,6 +32,7 @@ const scheduleSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
+      // Pending
       .addCase(getMoviesSchedule.pending, (state) => {
         state.isLoading = true;
       })
@@ -41,6 +42,7 @@ const scheduleSlice = createSlice({
       .addCase(getMovieById.pending, (state) => {
         state.isLoading = true;
       })
+      // Fulfilled
       .addCase(getMoviesSchedule.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
@@ -64,6 +66,7 @@ const scheduleSlice = createSlice({
           (meeting) => meeting.id !== action.payload
         );
       })
+      // Rejected
       .addCase(getMoviesSchedule.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.error.message;
@@ -73,6 +76,14 @@ const scheduleSlice = createSlice({
         state.error = action.error.message;
       })
       .addCase(getMovieById.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.error.message;
+      })
+      .addCase(addMeeting.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.error.message;
+      })
+      .addCase(deleteMeeting.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.error.message;
       });
