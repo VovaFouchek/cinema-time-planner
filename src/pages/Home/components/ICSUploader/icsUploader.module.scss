@@ -1,0 +1,21 @@
+.input {
+  font-size: 16px;
+
+  &::file-selector-button {
+    cursor: pointer;
+    border: 2px solid #000;
+    padding: 6px 24px;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 10px;
+    color: #fff;
+    padding: 10px;
+    background: #000;
+    transition: 0.4s;
+
+    &:hover {
+      color: #000;
+      background: none;
+    }
+  }
+}

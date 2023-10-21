@@ -6,6 +6,7 @@ import { selectorSchedule } from '@redux/schedule/selector';
 
 import Card from '@components/Card';
 import DateTimeDisplay from '@components/DateTimeDisplay';
+import formattedHours from '@shared/helpers/formattedHours';
 import MoviesSelect, { Option } from '../MoviesSelect';
 
 import styles from './recommendedTime.module.scss';
@@ -13,6 +14,7 @@ import styles from './recommendedTime.module.scss';
 interface IClosestValue {
   movie: string;
   time: string;
+  runningTime: string;
 }
 
 const RecommendedTime = () => {
@@ -63,6 +65,7 @@ const RecommendedTime = () => {
             setClosestValue({
               movie: selectedMovie.movie,
               time: session.date,
+              runningTime: formattedHours(selectedMovie.running_time),
             });
             break;
           }
@@ -84,8 +87,8 @@ const RecommendedTime = () => {
           Movie: <strong>{closestValue.movie}</strong>
           <DateTimeDisplay date={closestValue.time} />
           <p className={styles.description}>
-            You will spend almost 2 hours on a movie and 1 hours to commute.
-            Have a great time!
+            You will spend {closestValue.runningTime} on a movie and 1 hours to
+            commute. Have a great time!
           </p>
         </div>
       ) : (
