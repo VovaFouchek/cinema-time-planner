@@ -14,6 +14,7 @@ export default defineConfig({
       '@components': path.resolve(__dirname, './src/components'),
       '@shared': path.resolve(__dirname, './src/shared'),
       '@redux': path.resolve(__dirname, './src/redux'),
+      '@hooks': path.resolve(__dirname, './src/hooks'),
     },
   },
   plugins: [

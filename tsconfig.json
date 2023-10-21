@@ -27,7 +27,8 @@
       "@assets/*": ["src/assets/*"],
       "@components/*": ["src/components/*"],
       "@shared/*": ["src/shared/*"],
-      "@redux/*": ["src/redux/*"]
+      "@redux/*": ["src/redux/*"],
+      "@hooks/*": ["src/hooks/*"]
     }
   },
   "include": ["src"],
