@@ -13,9 +13,12 @@ Movie Time Planner is a React app built with TypeScript and Redux-Toolkit that h
 - React
 - TypeScript
 - Redux Toolkit
+- React Router
+- React Hook Form
 - Material UI
 - Axios
 - React Select
+- React DayPicker
 - Vite
 
 ## Testing
