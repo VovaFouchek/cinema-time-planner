@@ -26,8 +26,8 @@ export interface IMovieSchedule {
   sessions: ISession[];
 }
 
-export interface IMeetingsSchedule {
-  id: number;
+export interface IMeetingSchedule {
+  id?: number;
   date: string;
   task: string;
 }

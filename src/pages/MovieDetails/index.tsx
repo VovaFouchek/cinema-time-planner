@@ -28,13 +28,15 @@ const MovieDetails = () => {
   };
 
   useEffect(() => {
-    dispatch(getMovieById(id!));
+    if (id) {
+      dispatch(getMovieById(+id));
+    }
   }, [dispatch, id]);
 
   const getReleaseYear = new Date(movieDetails.release_date).getFullYear();
 
   return (
-    <div>
+    <>
       <Button onClick={handleBackClick}>Back to Home</Button>
       {isLoading ? (
         <Loader />
@@ -73,6 +75,9 @@ const MovieDetails = () => {
                 <li>
                   <strong>Starring:</strong> {movieDetails.starring.join(', ')}
                 </li>
+                <li>
+                  <strong>Available sessions:</strong>
+                </li>
               </ul>
               <div className={styles.wrap__session}>
                 {movieDetails.sessions.length ? (
@@ -91,7 +96,7 @@ const MovieDetails = () => {
       )}
 
       {!isLoading && error ? <ErrorMessage message={error} /> : null}
-    </div>
+    </>
   );
 };
 

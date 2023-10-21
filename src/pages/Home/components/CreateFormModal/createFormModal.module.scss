@@ -1,0 +1,23 @@
+input[type='time'] {
+  margin-left: 8px;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  background-color: #cdc6ff;
+}
+
+.errorText {
+  line-height: 2;
+  font-size: 13px;
+  color: #f43f5d;
+}
+
+.text {
+  margin-bottom: 15px;
+}
+
+.selected {
+  background-color: #9d91ff !important;
+}

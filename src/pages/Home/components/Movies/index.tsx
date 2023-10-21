@@ -36,6 +36,7 @@ const Movies = () => {
           </Button>
         </div>
       ))}
+
       {isLoading && <Loader />}
     </Card>
   );

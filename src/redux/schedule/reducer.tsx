@@ -1,6 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { IMovieSchedule } from '@shared/interfaces';
 import {
+  addMeeting,
+  deleteMeeting,
   getMeetingsSchedule,
   getMovieById,
   getMoviesSchedule,
@@ -9,6 +11,7 @@ import {
 import { IScheduleReducer } from './interfaces';
 
 const initialValue: IScheduleReducer = {
+  isOpenCreatedFormModal: false,
   moviesSchedule: [],
   meetingsSchedule: [],
   movieDetails: {} as IMovieSchedule,
@@ -19,7 +22,14 @@ const initialValue: IScheduleReducer = {
 const scheduleSlice = createSlice({
   name: 'schedule',
   initialState: initialValue,
-  reducers: {},
+  reducers: {
+    setOpenCreatedFormModal(state) {
+      state.isOpenCreatedFormModal = true;
+    },
+    setCloseCreatedFormModal(state) {
+      state.isOpenCreatedFormModal = false;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getMoviesSchedule.pending, (state) => {
@@ -46,6 +56,14 @@ const scheduleSlice = createSlice({
         state.error = null;
         state.movieDetails = action.payload;
       })
+      .addCase(addMeeting.fulfilled, (state, action) => {
+        state.meetingsSchedule = [...state.meetingsSchedule, action.payload];
+      })
+      .addCase(deleteMeeting.fulfilled, (state, action) => {
+        state.meetingsSchedule = state.meetingsSchedule.filter(
+          (meeting) => meeting.id !== action.payload
+        );
+      })
       .addCase(getMoviesSchedule.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.error.message;
@@ -60,5 +78,8 @@ const scheduleSlice = createSlice({
       });
   },
 });
+
+export const { setOpenCreatedFormModal, setCloseCreatedFormModal } =
+  scheduleSlice.actions;
 
 export default scheduleSlice.reducer;

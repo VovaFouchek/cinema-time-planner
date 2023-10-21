@@ -1,8 +1,9 @@
-import { IMeetingsSchedule, IMovieSchedule } from '@shared/interfaces';
+import { IMeetingSchedule, IMovieSchedule } from '@shared/interfaces';
 
 export interface IScheduleReducer {
+  isOpenCreatedFormModal: boolean;
   moviesSchedule: IMovieSchedule[];
-  meetingsSchedule: IMeetingsSchedule[];
+  meetingsSchedule: IMeetingSchedule[];
   movieDetails: IMovieSchedule;
   isLoading: boolean;
   error?: string | null;

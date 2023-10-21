@@ -1,12 +1,18 @@
 import styles from './button.module.scss';
 
 interface ButtonProps {
-  children: string;
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  children: string;
+  disabled?: boolean;
 }
-const Button: React.FC<ButtonProps> = ({ onClick, children }) => {
+const Button: React.FC<ButtonProps> = ({ onClick, children, disabled }) => {
   return (
-    <button type="button" onClick={onClick} className={styles.button}>
+    <button
+      type="button"
+      onClick={onClick}
+      disabled={disabled}
+      className={styles.button}
+    >
       {children}
     </button>
   );

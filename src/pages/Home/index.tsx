@@ -12,6 +12,7 @@ import ErrorMessage from '@components/ErrorMessage';
 import Meetings from './components/Meetings';
 import Movies from './components/Movies';
 import RecommendedTime from './components/RecommendedTime';
+import CreateFormModal from './components/CreateFormModal';
 
 import styles from './home.module.scss';
 
@@ -26,16 +27,18 @@ const Home = () => {
   }, [dispatch]);
 
   return (
-    <>
+    <div className={styles.inner}>
       <h1>Cinema time planner</h1>
+
       <div className={styles.wrap}>
         <Meetings />
         <Movies />
         <RecommendedTime />
       </div>
+      <CreateFormModal />
 
       {!isLoading && error ? <ErrorMessage message={error} /> : null}
-    </>
+    </div>
   );
 };
 
