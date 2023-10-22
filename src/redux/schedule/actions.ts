@@ -3,10 +3,11 @@ import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 import { API } from '@shared/API/entity.api';
-import { IMeetingSchedule, IMovieSchedule } from '@shared/interfaces';
+import { IMeetingSchedule, IMovieSchedule, IcsData } from '@shared/interfaces';
 
 import {
   MEETINGS_SCHEDULE_GET,
+  MEETING_ADD_ICS,
   MEETING_CREATE,
   MEETING_DELETE,
   MOVIES_SCHEDULE_GET,
@@ -79,6 +80,22 @@ export const deleteMeeting = createAsyncThunk(
       await axios.delete<IMeetingSchedule>(API.MEETINGS_SCHEDULE_WITH_ID(id));
 
       return id;
+    } catch (error) {
+      throw new Error('Server error...');
+    }
+  }
+);
+
+export const addIcsMeeting = createAsyncThunk(
+  MEETING_ADD_ICS,
+  async (payload: IcsData) => {
+    try {
+      const { data } = await axios.post<IcsData>(
+        API.MEETINGS_SCHEDULE,
+        payload
+      );
+
+      return data;
     } catch (error) {
       throw new Error('Server error...');
     }

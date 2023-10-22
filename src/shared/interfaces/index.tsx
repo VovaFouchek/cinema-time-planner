@@ -26,8 +26,18 @@ export interface IMovieSchedule {
   sessions: ISession[];
 }
 
+export interface IcsToJsonData {
+  startDate: string;
+  endDate: string;
+  description?: string;
+  summary: string;
+  location?: string;
+}
+
 export interface IMeetingSchedule {
   id?: number;
   date: string;
   task: string;
 }
+
+export type IcsData = IcsToJsonData & IMeetingSchedule;

@@ -1,4 +1,6 @@
 /* eslint-disable no-restricted-syntax */
+import { IcsToJsonData } from '@shared/interfaces';
+
 const NEW_LINE = /\r\n|\n|\r/;
 const EVENT = 'VEVENT';
 const EVENT_START = 'BEGIN';
@@ -10,15 +12,7 @@ const SUMMARY = 'SUMMARY';
 const LOCATION = 'LOCATION';
 const ALARM = 'VALARM';
 
-export interface IcsData {
-  startDate: string;
-  endDate: string;
-  description?: string;
-  summary: string;
-  location?: string;
-}
-
-const keyMap: Record<string, keyof IcsData> = {
+const keyMap: Record<string | number, keyof IcsToJsonData> = {
   [START_DATE]: 'startDate',
   [END_DATE]: 'endDate',
   [DESCRIPTION]: 'description',
@@ -30,10 +24,10 @@ const clean = (string: string) => {
   return decodeURI(string).trim();
 };
 
-const icsToJson = (icsData: string): IcsData[] => {
-  const array: IcsData[] = [];
-  let currentObj: Partial<IcsData> | null = null;
-  let lastKey: keyof IcsData | null = null;
+const icsToJson = (icsData: string): IcsToJsonData[] => {
+  const array: IcsToJsonData[] = [];
+  let currentObj: Partial<IcsToJsonData> | null = null;
+  let lastKey: keyof IcsToJsonData | null = null;
   const lines = icsData.split(NEW_LINE);
   let isAlarm = false;
 
@@ -61,7 +55,7 @@ const icsToJson = (icsData: string): IcsData[] => {
         case EVENT_END:
           isAlarm = false;
           if (value === EVENT && currentObj !== null) {
-            array.push(currentObj as IcsData);
+            array.push(currentObj as IcsToJsonData);
           }
           break;
 

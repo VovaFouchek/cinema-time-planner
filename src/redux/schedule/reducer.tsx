@@ -1,6 +1,7 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { IMovieSchedule } from '@shared/interfaces';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { IcsData, IMovieSchedule } from '@shared/interfaces';
 import {
+  addIcsMeeting,
   addMeeting,
   deleteMeeting,
   getMeetingsSchedule,
@@ -12,6 +13,7 @@ import { IScheduleReducer } from './interfaces';
 
 const initialValue: IScheduleReducer = {
   isOpenCreatedFormModal: false,
+  icsData: [],
   moviesSchedule: [],
   meetingsSchedule: [],
   movieDetails: {} as IMovieSchedule,
@@ -28,6 +30,9 @@ const scheduleSlice = createSlice({
     },
     setCloseCreatedFormModal(state) {
       state.isOpenCreatedFormModal = false;
+    },
+    setIcsData(state, action: PayloadAction<IcsData[]>) {
+      state.icsData = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -66,6 +71,9 @@ const scheduleSlice = createSlice({
           (meeting) => meeting.id !== action.payload
         );
       })
+      .addCase(addIcsMeeting.fulfilled, (state, action) => {
+        state.meetingsSchedule = [...state.meetingsSchedule, action.payload];
+      })
       // Rejected
       .addCase(getMoviesSchedule.rejected, (state, action) => {
         state.isLoading = false;
@@ -90,7 +98,7 @@ const scheduleSlice = createSlice({
   },
 });
 
-export const { setOpenCreatedFormModal, setCloseCreatedFormModal } =
+export const { setOpenCreatedFormModal, setCloseCreatedFormModal, setIcsData } =
   scheduleSlice.actions;
 
 export default scheduleSlice.reducer;
