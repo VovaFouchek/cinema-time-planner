@@ -48,9 +48,12 @@ const CreateFormModal = () => {
   const onSubmit: SubmitHandler<FieldValues> = (values) => {
     setIsLoading(true);
     const { date, task, time } = values as IValues;
-    const fullDate = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()} ${time}`;
 
-    dispatch(addMeeting({ date: fullDate, task }));
+    const isoFormattedDate = `${date.getFullYear()}-${(date.getMonth() + 1)
+      .toString()
+      .padStart(2, '0')}-${date.getDate().toString().padStart(2, '0')}T${time}`;
+
+    dispatch(addMeeting({ date: isoFormattedDate, task }));
 
     setTimeout(() => {
       setIsLoading(false);

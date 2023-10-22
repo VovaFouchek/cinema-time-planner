@@ -1,24 +1,13 @@
+import moment from 'moment';
+
 interface DateTimeDisplayProps {
   date: string;
 }
 
 const DateTimeDisplay: React.FC<DateTimeDisplayProps> = ({ date }) => {
-  const formattedDate = new Date(date).toLocaleString('en-US', {
-    weekday: 'short',
-    month: 'numeric',
-    day: 'numeric',
-  });
+  const formattedDateTime = moment(date).format('ddd, MMM Do, h:mm a');
 
-  const formattedTime = new Date(date).toLocaleTimeString('en-US', {
-    hour: 'numeric',
-    minute: 'numeric',
-  });
-
-  return (
-    <div>
-      {formattedDate} at {formattedTime}
-    </div>
-  );
+  return <div>{formattedDateTime}</div>;
 };
 
 export default DateTimeDisplay;
