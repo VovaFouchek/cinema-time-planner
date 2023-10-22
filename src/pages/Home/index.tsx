@@ -17,7 +17,6 @@ import Meetings from './components/Meetings';
 import Movies from './components/Movies';
 import RecommendedTime from './components/RecommendedTime';
 import CreateFormModal from './components/CreateFormModal';
-import ICSUploader from './components/ICSUploader';
 
 import styles from './home.module.scss';
 
@@ -47,12 +46,6 @@ const Home = () => {
         <Meetings />
         <Movies />
         <RecommendedTime />
-      </div>
-      <div className={styles.wrap__uploader}>
-        <p className={styles.text}>
-          Would you like to download your schedule? (.ics file)
-        </p>
-        <ICSUploader />
       </div>
 
       <CreateFormModal />

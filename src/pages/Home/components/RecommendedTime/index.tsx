@@ -9,6 +9,7 @@ import DateTimeDisplay from '@components/DateTimeDisplay';
 
 import formattedHours from '@helpers/formattedHours';
 import MoviesSelect, { Option } from '../MoviesSelect';
+import ICSUploader from '../ICSUploader';
 
 import styles from './recommendedTime.module.scss';
 
@@ -97,6 +98,12 @@ const RecommendedTime = () => {
           Unfortunately, no suitable time was found to visit the cinema
         </p>
       )}
+      <div className={styles.wrap__uploader}>
+        <p className={styles.title}>
+          Would you like to download your schedule? (.ics file)
+        </p>
+        <ICSUploader />
+      </div>
     </Card>
   );
 };
