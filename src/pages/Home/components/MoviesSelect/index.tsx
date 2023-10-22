@@ -1,5 +1,6 @@
 import Select from 'react-select';
-import useMovies from '../../../../hooks/useMovies';
+
+import useMovies from '@hooks/useMovies';
 
 export interface Option {
   readonly label: string;

@@ -1,0 +1,29 @@
+.button {
+  display: inline-block;
+  margin: 0 auto;
+  padding: 6px 24px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  white-space: nowrap;
+  border: 3px solid #000;
+  border-radius: 30px;
+  color: #fff;
+  background: #000;
+  transition: all 0.4s;
+
+  &:hover {
+    color: #000;
+    background: none;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+
+    &:hover {
+      color: #fff;
+      background: #000;
+    }
+  }
+}

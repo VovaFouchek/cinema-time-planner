@@ -6,13 +6,17 @@ import { selectorSchedule } from '@redux/schedule/selector';
 
 import Card from '@components/Card';
 import DateTimeDisplay from '@components/DateTimeDisplay';
+
+import formattedHours from '@helpers/formattedHours';
 import MoviesSelect, { Option } from '../MoviesSelect';
+import ICSUploader from '../ICSUploader';
 
 import styles from './recommendedTime.module.scss';
 
 interface IClosestValue {
   movie: string;
   time: string;
+  runningTime: string;
 }
 
 const RecommendedTime = () => {
@@ -31,18 +35,27 @@ const RecommendedTime = () => {
       (movie) => movie.movie === selectedOption?.value
     );
 
+    const convertMinuteToHours = (minuteCount: number) => minuteCount / 60;
+
     if (selectedMovie?.id) {
       const currentTime = new Date().getTime();
 
       for (const session of selectedMovie.sessions) {
         const sessionTime = new Date(session.date).getTime();
+        const comuteTime = 0.5;
         const hourInMilliseconds = 60 * 60 * 1000;
+
+        const movieRunningTime = convertMinuteToHours(
+          +selectedMovie.running_time.toFixed(1)
+        );
 
         if (sessionTime > currentTime) {
           const movieStartTime = new Date(
-            sessionTime - 0.5 * hourInMilliseconds
+            sessionTime - comuteTime * hourInMilliseconds
           );
-          const movieEndTime = new Date(sessionTime + 2.5 * hourInMilliseconds);
+          const movieEndTime = new Date(
+            sessionTime + movieRunningTime * hourInMilliseconds
+          );
 
           const conflictingMeeting = sortedMeetings.find((meeting) => {
             const meetingTime = new Date(meeting.date);
@@ -54,6 +67,7 @@ const RecommendedTime = () => {
             setClosestValue({
               movie: selectedMovie.movie,
               time: session.date,
+              runningTime: formattedHours(selectedMovie.running_time),
             });
             break;
           }
@@ -75,8 +89,8 @@ const RecommendedTime = () => {
           Movie: <strong>{closestValue.movie}</strong>
           <DateTimeDisplay date={closestValue.time} />
           <p className={styles.description}>
-            You will spend almost 2 hours on a movie and 1 hours to commute.
-            Have a great time!
+            You will spend {closestValue.runningTime} on a movie and 1 hours to
+            commute. Have a great time!
           </p>
         </div>
       ) : (
@@ -84,6 +98,12 @@ const RecommendedTime = () => {
           Unfortunately, no suitable time was found to visit the cinema
         </p>
       )}
+      <div className={styles.wrap__uploader}>
+        <p className={styles.title}>
+          Would you like to download your schedule? (.ics file)
+        </p>
+        <ICSUploader />
+      </div>
     </Card>
   );
 };
