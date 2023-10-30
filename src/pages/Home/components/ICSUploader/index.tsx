@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-floating-promises */
 import React from 'react';
 import toast from 'react-hot-toast';
 import moment from 'moment';

@@ -25,14 +25,14 @@ const Input: React.FC<InputProps> = ({
   errors,
 }) => {
   return (
-    <div className="relative w-full">
+    <div>
       <input
+        type={type}
         id={id}
         disabled={disabled}
         {...register(id, { required, maxLength: maxLengthValue })}
-        placeholder={placeholder}
-        type={type}
         className={`${styles.field} ${errors.task && styles.error}`}
+        placeholder={placeholder}
       />
     </div>
   );
